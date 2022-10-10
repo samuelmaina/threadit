@@ -21,11 +21,6 @@ async function main() {
   });
   await apolloServer.start();
   apolloServer.applyMiddleware({ app });
-
-  app.get("/", (req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello World");
-    next();
-  });
   app.listen(PORT, () => console.log("App started running on port + " + PORT));
 }
 
